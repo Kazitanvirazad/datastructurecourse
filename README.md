@@ -1,2 +1,1 @@
-# datastructurecourse
-Data Structure Java Course study repo
+Data Structure Java Course study repository.
