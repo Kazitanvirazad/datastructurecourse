@@ -1,13 +1,16 @@
 package com.sort.selectionSort;
 
+import com.print.array.PrintArray;
+
 //Unstable Sorting
 public class SelectionSort {
 
 	public static void main(String[] args) {
 
 		int[] unsortedArray = { 20, 35, 7, -15, 7, 55, 1, -22 };
-		printArray(unsortedArray);
-		printArray(selectionSortDsc(unsortedArray));
+		PrintArray.printArray(unsortedArray);
+		PrintArray.printArray(selectionSortAsc(unsortedArray));
+		PrintArray.printArray(selectionSortDsc(unsortedArray));
 	}
 
 	public static int[] selectionSortDsc(int[] arr) {
@@ -37,12 +40,6 @@ public class SelectionSort {
 		arr[i] = arr[j];
 		arr[j] = temp;
 		return arr;
-	}
-
-	public static void printArray(int[] arr) {
-		for (int i : arr)
-			System.out.print(i + " ");
-		System.out.println();
 	}
 
 }

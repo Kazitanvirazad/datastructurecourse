@@ -1,16 +1,14 @@
 package com.sort.selectionSort;
 
+import com.print.array.PrintArray;
+
 public class SelectionSortUdemy {
 
 	// Another approach of doing Selection sort
 	public static void main(String[] args) {
 		int[] unsortedArray = { 20, 35, 7, -15, 7, 55, 1, -22 };
-		printArray(unsortedArray);
-//		printArray(selectionSortAsc(unsortedArray));
-		printArray(selectionSortDsc(unsortedArray));
-//		selectionSortAsc(unsortedArray);
-//		selectionSortDsc(unsortedArray);
-//		printArray(unsortedArray);
+		PrintArray.printArray(unsortedArray);
+		PrintArray.printArray(selectionSortDsc(unsortedArray));
 	}
 
 	public static int[] selectionSortDsc(int[] arr) {
@@ -22,7 +20,6 @@ public class SelectionSortUdemy {
 					smallestNumIndex = j;
 				}
 			}
-//			printArray(arr);
 			swap(arr, lastIndex, smallestNumIndex);
 			lastIndex--;
 		}
@@ -52,9 +49,4 @@ public class SelectionSortUdemy {
 		return arr;
 	}
 
-	public static void printArray(int[] arr) {
-		for (int i : arr)
-			System.out.print(i + " ");
-		System.out.println();
-	}
 }

@@ -1,5 +1,7 @@
 package com.sort.bubbleSort;
 
+import com.print.array.PrintArray;
+
 //Stable Sorting
 //In-Place algorithm
 public class BubbleSort {
@@ -7,9 +9,8 @@ public class BubbleSort {
 	// Sorting in ascending order
 	public static void main(String[] args) {
 		int[] unsortedArray = { 22, -1, 55, 43, 55, 5, 8 };
-		printArray(unsortedArray);
-		System.out.println();
-		printArray(bubbleSort(unsortedArray));
+		PrintArray.printArray(unsortedArray);
+		PrintArray.printArray(bubbleSort(unsortedArray));
 	}
 
 	public static int[] bubbleSort(int[] arr) {
@@ -31,11 +32,5 @@ public class BubbleSort {
 		arr[j] = temp;
 		return arr;
 	}
-	
-	public static void printArray(int[] arr) {
-		for (int i : arr)
-			System.out.print(i + " ");
-		System.out.println();
-	}
-}
 
+}

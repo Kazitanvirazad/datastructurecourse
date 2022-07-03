@@ -1,12 +1,14 @@
 package com.sort.selectionSort;
 
+import com.print.array.PrintArray;
+
 public class SelectionSort2 {
 
 	public static void main(String[] args) {
 		int[] unsortedArray = { 22, -1, 55, 43, 35, 5, 8, 7, 11, 6, 99, 55 };
-		printArray(unsortedArray);
+		PrintArray.printArray(unsortedArray);
 		selectionSort(unsortedArray);
-		printArray(unsortedArray);
+		PrintArray.printArray(unsortedArray);
 	}
 
 	public static int[] selectionSort(int[] arr) {
@@ -29,9 +31,4 @@ public class SelectionSort2 {
 		arr[largest] = temp;
 	}
 
-	public static void printArray(int[] arr) {
-		for (int i : arr)
-			System.out.print(i + " ");
-		System.out.println();
-	}
 }
