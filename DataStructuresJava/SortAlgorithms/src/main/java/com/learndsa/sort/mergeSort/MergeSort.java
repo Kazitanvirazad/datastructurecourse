@@ -8,7 +8,6 @@ public class MergeSort {
     }
 
     private static void mergeSort(int[] input, int start, int end) {
-
         // recursion break condition
         if (end - start < 2) {
             return;
