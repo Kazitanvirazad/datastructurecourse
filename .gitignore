@@ -16,6 +16,9 @@ target/
 mvnw.*
 mvnw
 
+# Ignoring practice files
+practice/
+
 
 # Ignore spring local profile property files
 *-local.*
