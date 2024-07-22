@@ -1,7 +1,8 @@
 package com.learndsa.sort.mergeSort;
 
-// Stable algorithm and not an in place algorithm
+// Stable algorithm but not an In place algorithm
 // Time complexity O(nlogn)
+// Space complexity O(n)
 public class MergeSort {
     public static void sort(int[] input) {
         mergeSort(input, 0, input.length);
