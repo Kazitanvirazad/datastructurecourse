@@ -1,5 +1,6 @@
 package com.learndsa.sort.mergeSort;
 
+import com.learndsa.practice.MergeSortFive;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -37,7 +38,7 @@ class MergeSortTest {
     @DisplayName(value = "Should return true if the array is sorted Test 1")
     void checkWhetherArrayIsSortedTestOne() {
         int[] newArr1 = {4, 3, 1, 6, 5, 2, 8, 7, 6, 6, -9, 3, 1, 9, 0, -6, 4, 2, 5, 3};
-        MergeSort.sort(newArr1);
+        MergeSortFive.sort(newArr1);
         assertTrue(isSorted(newArr1), "Should return true if the array is sorted Test 1");
     }
 
@@ -45,7 +46,7 @@ class MergeSortTest {
     @DisplayName(value = "Should return true if the array is sorted Test 2")
     void checkWhetherArrayIsSortedTestTwo() {
         int[] arr = {4, 3, 1, 6, 5};
-        MergeSort.sort(arr);
+        MergeSortFive.sort(arr);
         assertTrue(isSorted(arr), "Should return true if the array is sorted Test 2");
     }
 
@@ -53,7 +54,7 @@ class MergeSortTest {
     @DisplayName(value = "Should return true if the array is sorted Test 3")
     void checkWhetherArrayIsSortedTestThree() {
         int[] arr1 = {4, 3, 1, 6, 5, 2};
-        MergeSort.sort(arr1);
+        MergeSortFive.sort(arr1);
         assertTrue(isSorted(arr1), "Should return true if the array is sorted Test 3");
     }
 
@@ -61,7 +62,7 @@ class MergeSortTest {
     @DisplayName(value = "Should return true if the array is sorted Test 4")
     void checkWhetherArrayIsSortedTestFour() {
         int[] newArr = {4, 3, 1, 6, 5, 2, 8, 7, 6, 6, -9, 3, 1, 9, 0, -6, 4, 2, 5};
-        MergeSort.sort(newArr);
+        MergeSortFive.sort(newArr);
         assertTrue(isSorted(newArr), "Should return true if the array is sorted Test 4");
     }
 
@@ -69,7 +70,7 @@ class MergeSortTest {
     @DisplayName(value = "Should return true if the array with two elements is sorted Test 5")
     void checkWhetherArrayIsSortedTestFive() {
         int[] arrWithTwoElements = {4, -3};
-        MergeSort.sort(arrWithTwoElements);
+        MergeSortFive.sort(arrWithTwoElements);
         assertTrue(isSorted(arrWithTwoElements), "Should return true if the array with two elements is sorted Test 5");
     }
 
@@ -77,7 +78,7 @@ class MergeSortTest {
     @DisplayName(value = "Should return true if the array with one elements is sorted Test 6")
     void checkWhetherArrayIsSortedTestSix() {
         int[] arrWithOneElements = {4};
-        MergeSort.sort(arrWithOneElements);
+        MergeSortFive.sort(arrWithOneElements);
         assertTrue(isSorted(arrWithOneElements), "Should return true if the array with one elements is sorted Test 6");
     }
 
@@ -85,7 +86,7 @@ class MergeSortTest {
     @DisplayName(value = "Should return true if the array with no elements is sorted Test 7")
     void checkWhetherArrayIsSortedTestSeven() {
         int[] arrWithNoElements = {};
-        MergeSort.sort(arrWithNoElements);
+        MergeSortFive.sort(arrWithNoElements);
         assertTrue(isSorted(arrWithNoElements), "Should return true if the array with no elements is sorted Test 7");
     }
 }
