@@ -7,26 +7,33 @@ public class DoublyLinkedList<T> {
 
     public void addBefore(T newElement, T existingElement) {
         Node<T> newNode = new Node<>(newElement);
-        Node<T> node = head;
 
-        if (node.equals(existingElement)) {
+        if (isEmpty()) {
+            return;
+        }
+        Node<T> current = head;
+        if (current.getElement().equals(existingElement)) {
             addToFront(newElement);
             return;
-        } else if (node.equals(tail)) {
-            addToEnd(newElement);
+        } else if (tail.getElement().equals(existingElement)) {
+            newNode.setPrevious(tail.getPrevious());
+            tail.getPrevious().setNext(newNode);
+            newNode.setNext(tail);
+            tail.setPrevious(newNode);
+            size++;
             return;
         }
 
-        while (node != null) {
-            if (node.getNext() != null && node.getNext().getElement().equals(existingElement)) {
-                newNode.setNext(node.getNext());
-                newNode.setPrevious(node);
-                node.getNext().setPrevious(newNode);
-                node.setNext(newNode);
+        while (current != null) {
+            if (current.getElement().equals(existingElement)) {
+                newNode.setPrevious(current.getPrevious());
+                current.getPrevious().setNext(newNode);
+                newNode.setNext(current);
+                current.setPrevious(newNode);
                 size++;
                 break;
             } else {
-                node = node.getNext();
+                current = current.getNext();
             }
         }
     }
@@ -44,15 +51,15 @@ public class DoublyLinkedList<T> {
     }
 
     public void addToEnd(T element) {
-        Node<T> newNode = new Node<>(element);
-        if (tail == null) {
-            head = newNode;
+        if (isEmpty()) {
+            addToFront(element);
         } else {
+            Node<T> newNode = new Node<>(element);
             tail.setNext(newNode);
             newNode.setPrevious(tail);
+            tail = newNode;
+            size++;
         }
-        tail = newNode;
-        size++;
     }
 
     public Node<T> removeFromFront() {

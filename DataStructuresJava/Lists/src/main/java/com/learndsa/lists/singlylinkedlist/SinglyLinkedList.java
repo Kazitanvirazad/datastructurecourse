@@ -31,7 +31,7 @@ public class SinglyLinkedList<T> {
     }
 
     public boolean isEmpty() {
-        return head == null;
+        return size == 0 || head == null;
     }
 
     public int getSize() {
