@@ -97,6 +97,12 @@ public class BinarySearchTree {
         if (root != null) traversePreOrder(root);
     }
 
+    private void traversePreOrder(TreeNode subRoot) {
+        System.out.print(subRoot.getData() + " ");
+        if (subRoot.getLeftChild() != null) traversePreOrder(subRoot.getLeftChild());
+        if (subRoot.getRightChild() != null) traversePreOrder(subRoot.getRightChild());
+    }
+
     public void traversePostOrder() {
         if (root != null) traversePostOrder(root);
     }
@@ -105,12 +111,6 @@ public class BinarySearchTree {
         if (subRoot.getLeftChild() != null) traversePostOrder(subRoot.getLeftChild());
         if (subRoot.getRightChild() != null) traversePostOrder(subRoot.getRightChild());
         System.out.print(subRoot.getData() + " ");
-    }
-
-    private void traversePreOrder(TreeNode subRoot) {
-        System.out.print(subRoot.getData() + " ");
-        if (subRoot.getLeftChild() != null) traversePreOrder(subRoot.getLeftChild());
-        if (subRoot.getRightChild() != null) traversePreOrder(subRoot.getRightChild());
     }
 
     public void traverseInOrder() {
