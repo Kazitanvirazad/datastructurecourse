@@ -11,7 +11,7 @@ public class BinarySearchTree {
 
     private TreeNode delete(TreeNode subRoot, int value) {
         if (subRoot == null) {
-            return subRoot;
+            return null;
         }
         if (value < subRoot.getData()) {
             subRoot.setLeftChild(delete(subRoot.getLeftChild(), value));
