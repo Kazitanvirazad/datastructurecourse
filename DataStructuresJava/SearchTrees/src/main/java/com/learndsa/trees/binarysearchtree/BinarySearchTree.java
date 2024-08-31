@@ -25,8 +25,7 @@ public class BinarySearchTree {
                 return subRoot.getLeftChild();
             }
             // case 3: node to delete has 2 children
-            // replace tje value in the subRoot node with the smallest value from the
-            // right subRoot
+            // replace the value in the subRoot node with the smallest value from the right subRoot
             subRoot.setData(min(subRoot.getRightChild()));
             // Delete the node that has the smallest value in the right subRoot
             subRoot.setRightChild(delete(subRoot.getRightChild(), subRoot.getData()));

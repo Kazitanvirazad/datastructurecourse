@@ -12,6 +12,10 @@ public class Main {
         tree.insert(26);
         tree.insert(22);
         tree.insert(32);
+        tree.insert(28);
+        tree.insert(16);
+        tree.insert(23);
+        tree.insert(14);
 
         System.out.println("\n===================InOrder Traversal======================");
         tree.traverseInOrder();
@@ -35,9 +39,10 @@ public class Main {
         System.out.println("===================Before Deletion======================");
         tree.traverseLevelOrder();
         System.out.println("\n===================After Deletion======================");
+        tree.delete(28);
+        tree.delete(22);
         tree.delete(15);
-        tree.delete(25);
-        tree.delete(30);
+        tree.delete(27);
         tree.traverseLevelOrder();
     }
 }
