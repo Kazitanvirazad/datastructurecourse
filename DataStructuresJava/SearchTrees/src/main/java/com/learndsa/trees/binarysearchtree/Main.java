@@ -13,12 +13,13 @@ public class Main {
         tree.insert(22);
         tree.insert(32);
 
+        System.out.println("\n===================InOrder Traversal======================");
         tree.traverseInOrder();
-        System.out.println("\n=========================================");
+        System.out.println("\n===================LevelOrder Traversal======================");
         tree.traverseLevelOrder();
-        System.out.println("\n=========================================");
+        System.out.println("\n===================PreOrder Traversal======================");
         tree.traversePreOrder();
-        System.out.println("\n=========================================");
+        System.out.println("\n===================PostOrder Traversal======================");
         tree.traversePostOrder();
         System.out.println("\n=========================================");
         System.out.println("20 exists: " + tree.contains(20));

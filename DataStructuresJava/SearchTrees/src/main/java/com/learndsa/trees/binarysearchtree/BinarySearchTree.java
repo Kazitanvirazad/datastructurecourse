@@ -7,7 +7,26 @@ public class BinarySearchTree {
 
     public void insert(int value) {
         if (root == null) root = new TreeNode(value);
-        else root.insert(value);
+        else insert(root, value);
+    }
+
+    private void insert(TreeNode subRoot, int value) {
+        if (value == subRoot.getData()) {
+            return;
+        }
+        if (value < subRoot.getData()) {
+            if (subRoot.getLeftChild() == null) {
+                subRoot.setLeftChild(new TreeNode(value));
+            } else {
+                insert(subRoot.getLeftChild(), value);
+            }
+        } else {
+            if (subRoot.getRightChild() == null) {
+                subRoot.setRightChild(new TreeNode(value));
+            } else {
+                insert(subRoot.getRightChild(), value);
+            }
+        }
     }
 
     public int max() {
@@ -90,25 +109,6 @@ public class BinarySearchTree {
         private int data;
         private TreeNode leftChild;
         private TreeNode rightChild;
-
-        private void insert(int value) {
-            if (value == data) {
-                return;
-            }
-            if (value < data) {
-                if (leftChild == null) {
-                    leftChild = new TreeNode(value);
-                } else {
-                    leftChild.insert(value);
-                }
-            } else {
-                if (rightChild == null) {
-                    rightChild = new TreeNode(value);
-                } else {
-                    rightChild.insert(value);
-                }
-            }
-        }
 
         private TreeNode(int data) {
             this.data = data;
