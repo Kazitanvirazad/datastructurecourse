@@ -5,6 +5,35 @@ import com.learndsa.util.Queue;
 public class BinarySearchTree {
     private TreeNode root;
 
+    public void delete(int value) {
+        root = delete(root, value);
+    }
+
+    private TreeNode delete(TreeNode subRoot, int value) {
+        if (subRoot == null) {
+            return subRoot;
+        }
+        if (value < subRoot.getData()) {
+            subRoot.setLeftChild(delete(subRoot.getLeftChild(), value));
+        } else if (value > subRoot.getData()) {
+            subRoot.setRightChild(delete(subRoot.getRightChild(), value));
+        } else {
+            // case 1 and 2: node to delete has 0 or 1 children
+            if (subRoot.getLeftChild() == null) {
+                return subRoot.getRightChild();
+            } else if (subRoot.getRightChild() == null) {
+                return subRoot.getLeftChild();
+            }
+            // case 3: node to delete has 2 children
+            // replace tje value in the subRoot node with the smallest value from the
+            // right subRoot
+            subRoot.setData(min(subRoot.getRightChild()));
+            // Delete the node that has the smallest value in the right subRoot
+            subRoot.setRightChild(delete(subRoot.getRightChild(), subRoot.getData()));
+        }
+        return subRoot;
+    }
+
     public void insert(int value) {
         if (root == null) root = new TreeNode(value);
         else insert(root, value);
@@ -102,40 +131,6 @@ public class BinarySearchTree {
             System.out.print(current.getData() + " ");
             if (current.getLeftChild() != null) queue.add(current.getLeftChild());
             if (current.getRightChild() != null) queue.add(current.getRightChild());
-        }
-    }
-
-    private final class TreeNode {
-        private int data;
-        private TreeNode leftChild;
-        private TreeNode rightChild;
-
-        private TreeNode(int data) {
-            this.data = data;
-        }
-
-        private int getData() {
-            return data;
-        }
-
-        private void setData(int data) {
-            this.data = data;
-        }
-
-        private TreeNode getLeftChild() {
-            return leftChild;
-        }
-
-        private void setLeftChild(TreeNode leftChild) {
-            this.leftChild = leftChild;
-        }
-
-        private TreeNode getRightChild() {
-            return rightChild;
-        }
-
-        private void setRightChild(TreeNode rightChild) {
-            this.rightChild = rightChild;
         }
     }
 }

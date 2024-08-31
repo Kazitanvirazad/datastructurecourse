@@ -32,5 +32,12 @@ public class Main {
         System.out.println("98 exists: " + tree.contains(98));
         System.out.println("\nMin value = " + tree.min());
         System.out.println("\nMax value = " + tree.max());
+        System.out.println("===================Before Deletion======================");
+        tree.traverseLevelOrder();
+        System.out.println("\n===================After Deletion======================");
+        tree.delete(15);
+        tree.delete(25);
+        tree.delete(30);
+        tree.traverseLevelOrder();
     }
 }
