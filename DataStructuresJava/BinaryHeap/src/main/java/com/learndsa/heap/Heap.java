@@ -26,19 +26,19 @@ public class Heap {
         heap[index] = newValue;
     }
 
-    public boolean isFull() {
+    private boolean isFull() {
         return size == heap.length;
     }
 
-    public int getParentIndex(int index) {
+    private int getParentIndex(int index) {
         return (index - 1) / 2;
     }
 
-    public int getLeftChildIndex(int index) {
+    private int getLeftChildIndex(int index) {
         return (2 * index) + 1;
     }
 
-    public int getRightChildIndex(int index) {
+    private int getRightChildIndex(int index) {
         return (2 * index) + 2;
     }
 }
