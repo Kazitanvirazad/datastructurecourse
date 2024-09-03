@@ -18,17 +18,18 @@ public class BinarySearchTree {
         } else if (value > subRoot.getData()) {
             subRoot.setRightChild(delete(subRoot.getRightChild(), value));
         } else {
-            // case 1 and 2: node to delete has 0 or 1 children
-            if (subRoot.getLeftChild() == null) {
-                return subRoot.getRightChild();
-            } else if (subRoot.getRightChild() == null) {
-                return subRoot.getLeftChild();
+            // node to delete has 2 children
+            if (subRoot.getLeftChild() != null && subRoot.getRightChild() != null) {
+                TreeNode minValuedNodeFromRightSubTree = minValuedNodeFromRightSubTree(subRoot.getRightChild());
+                subRoot.setData(minValuedNodeFromRightSubTree.getData());
+                subRoot.setRightChild(delete(subRoot.getRightChild(), minValuedNodeFromRightSubTree.getData()));
+            } else if (subRoot.getLeftChild() != null) { // node to delete has 1 left child
+                subRoot = subRoot.getLeftChild();
+            } else if (subRoot.getRightChild() != null) { // node to delete has 1 right child
+                subRoot = subRoot.getRightChild();
+            } else { // node to delete has 0 children
+                subRoot = null;
             }
-            // case 3: node to delete has 2 children
-            // replace the value in the subRoot node with the smallest value from the right subRoot
-            subRoot.setData(min(subRoot.getRightChild()));
-            // Delete the node that has the smallest value in the right subRoot
-            subRoot.setRightChild(delete(subRoot.getRightChild(), subRoot.getData()));
         }
         return subRoot;
     }
@@ -75,6 +76,11 @@ public class BinarySearchTree {
     private int min(TreeNode subRoot) {
         if (subRoot.getLeftChild() != null) return min(subRoot.getLeftChild());
         return subRoot.getData();
+    }
+
+    private TreeNode minValuedNodeFromRightSubTree(TreeNode subRoot) {
+        if (subRoot.getLeftChild() != null) return minValuedNodeFromRightSubTree(subRoot.getLeftChild());
+        return subRoot;
     }
 
     public boolean contains(int value) {
