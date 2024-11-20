@@ -10,10 +10,11 @@ public class InsertionSort2 {
     public static void main(String[] args) {
         int[] unsortedArray = {22, -1, 55, 43, 35, 5, 8, 7, 11, 6, 99, 55};
         PrintArray.printArray(unsortedArray);
-        PrintArray.printArray(insertionSort(unsortedArray));
+        insertionSort(unsortedArray);
+        PrintArray.printArray(unsortedArray);
     }
 
-    public static int[] insertionSort(int[] arr) {
+    public static void insertionSort(int[] arr) {
         for (int i = 1; i < arr.length; i++) {
             int unsortedElement = arr[i];
             int position = -1;
@@ -26,7 +27,6 @@ public class InsertionSort2 {
             if (position > -1)
                 swapUnsortedElement(arr, unsortedElement, position);
         }
-        return arr;
     }
 
     public static void moveElementOneStepBack(int[] arr, int index) {
