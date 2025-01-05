@@ -73,7 +73,7 @@ public class NQueensProblem {
         for (int i = 0; i < chessTable.length; i++) {
             for (int j = 0; j < chessTable[i].length; j++) {
                 if (chessTable[i][j] == 1) {
-                    System.out.print(" * ");
+                    System.out.print(" Q ");
                 } else {
                     System.out.print(" - ");
                 }
